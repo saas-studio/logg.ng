@@ -1,0 +1,49 @@
+{
+  "name": "loggng-cloudflare",
+  "version": "1.0.2",
+  "description": "Logg.ng App for Cloudflare",
+  "scripts": {
+    "start": "npm-run-all dev:setup dev:wrangler",
+    "dev:wrangler": "wrangler preview --watch",
+    "dev:setup": "npm-run-all lint",
+    "build:prod": "npm-run-all lint; wrangler build -e production",
+    "build:dev": "npm-run-all lint; wrangler build",
+    "lint": "node_modules/.bin/eslint --fix --ext .js src workers",
+    "test": "mocha",
+    "test:watch": "mocha --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saas-studio/logg.ng.git"
+  },
+  "author": "Logg.ng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saas-studio/logg.ng/issues"
+  },
+  "homepage": "https://logg.ng",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@dollarshaveclub/cloudworker": "^0.1.2",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.2.1",
+    "eslint": "^6.7.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-watch": "^6.0.0",
+    "extract-loader": "^3.0.0",
+    "file-loader": "^5.0.0",
+    "mocha": "^6.1.4",
+    "prettier": "^1.14.3",
+    "style-loader": "^1.0.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2",
+    "yarn-run-all": "^3.1.1"
+  }
+}
